@@ -11,6 +11,13 @@ public class WeatherDetailsActivity extends AppCompatActivity {
     TextView email;
     TextView phone;
     TextView address;
+    TextView display;
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +27,8 @@ public class WeatherDetailsActivity extends AppCompatActivity {
         email=findViewById(R.id.email);
         phone=findViewById(R.id.phone);
         address=findViewById(R.id.address);
+        display=findViewById(R.id.display);
+
 
         String name=getIntent().getStringExtra("full_name");
         full_name.setText(name);
@@ -32,6 +41,15 @@ public class WeatherDetailsActivity extends AppCompatActivity {
 
         String place=getIntent().getStringExtra("address");
         address.setText(place);
+
+        String show =getIntent().getStringExtra("display");
+        display.setText(show);
+
+
+
+
+
+
 
 
 

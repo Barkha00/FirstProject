@@ -1,4 +1,4 @@
-package com.example.firstproject;
+package com.example.firstproject.MVP;
 
 public interface WeatherInterface {
 

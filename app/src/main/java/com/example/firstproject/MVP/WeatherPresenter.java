@@ -1,7 +1,7 @@
-package com.example.firstproject;
+package com.example.firstproject.MVP;
 
 //
-public class WeatherPresenter implements WeatherInterface.Presenter{
+public class WeatherPresenter implements WeatherInterface.Presenter {
 
     WeatherModel weatherModel;
     WeatherInterface.View view;

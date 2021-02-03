@@ -5,20 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#95B9C7"
     tools:context=".WeatherDetailsActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="The Details of the User"
+            android:layout_marginLeft="40dp"
+            android:padding="50dp"
+            android:text="User Details"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="40dp"
+
+            />
 
 
     </LinearLayout>
@@ -31,17 +35,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:text="Name:"
-            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:textColor="#483C32"
+            />
 
 
         <TextView
-           android:layout_marginLeft="20dp"
+           android:layout_marginLeft="30dp"
             android:id="@+id/full_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="#483C32"
+            android:textSize="10dp"
+            />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,16 +62,20 @@
 
             android:layout_width="wrap_content"
             android:text="Email:"
-            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
             android:layout_marginBottom="20dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#483C32"/>
 
 
         <TextView
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#483C32"
+            android:textSize="10dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,16 +85,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:text="Phone:"
-            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
             android:layout_marginBottom="20dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#483C32"/>
 
 
         <TextView
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             android:id="@+id/phone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="#483C32"
+            android:textSize="10dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,15 +108,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:text="Address:"
-            android:textSize="20dp"
-            android:layout_height="wrap_content" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:textColor="#483C32"/>
 
 
         <TextView
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:id="@+id/address"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#483C32"
+            android:textSize="10dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -107,19 +131,33 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Display:"
-            android:textSize="20dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"/>
+            android:text="Display:"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="15sp"
+            android:textColor="#483C32"
 
+
+
+            />
 
         <TextView
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             android:id="@+id/display"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#483C32"
+            android:textSize="10dp"
+
+
+
+
             />
     </LinearLayout>
+
+
+
 
 
 </LinearLayout>

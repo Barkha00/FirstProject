@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.firstproject.MVP.WeatherInterface;
+import com.example.firstproject.MVP.WeatherPresenter;
+
 public class WeatherActivity extends AppCompatActivity implements WeatherInterface.View {
 // define
     Button  simpleButton;
@@ -17,6 +20,8 @@ public class WeatherActivity extends AppCompatActivity implements WeatherInterfa
     EditText phone;
     EditText address;
     WeatherInterface.Presenter presenter;
+    //global varibale
+    String namenew;
 
 
     public void display(){
@@ -37,6 +42,7 @@ public class WeatherActivity extends AppCompatActivity implements WeatherInterfa
        email=findViewById(R.id.email);
        phone=findViewById(R.id.phone);
        address=findViewById(R.id.address);
+
       presenter= new WeatherPresenter(this);
 
 
@@ -90,6 +96,7 @@ public class WeatherActivity extends AppCompatActivity implements WeatherInterfa
         intent.putExtra("email",email.getText().toString());
         intent.putExtra("phone",phone.getText().toString());
         intent.putExtra("address",address.getText().toString());
+        intent.putExtra("display",namenew);
 
        startActivity(intent);
 
@@ -115,7 +122,7 @@ public class WeatherActivity extends AppCompatActivity implements WeatherInterfa
     @Override
     public void onShowData(String display) {
         Toast.makeText(getApplicationContext(),display,Toast.LENGTH_LONG).show();
-
+        namenew = display;
     }
 
 

@@ -1,5 +1,7 @@
 package com.example.firstproject.MVP;
 
+import com.example.firstproject.RetrofitHelper.MultipleResource;
+
 //
 public class WeatherPresenter implements WeatherInterface.Presenter {
 
@@ -18,39 +20,17 @@ public class WeatherPresenter implements WeatherInterface.Presenter {
 
 
     @Override
-    public void requestDataFromServer() {
-        weatherModel.getData(new WeatherModel.onDataListener() {
+    public void showTheData(float latitude, float longitude, String product, String output) {
+        weatherModel.showData(latitude, longitude, product, output, new WeatherModel.onDataListener() {
             @Override
-            public void onSuccess(String success) {
-                view.onSuccessData(success);
+            public void onSuccess(MultipleResource success) {
+                view.onSuccess(success);
             }
 
             @Override
-            public void showSuccess(String display) {
-                 view.onShowData(display);
-
-
+            public void onFailure(String message) {
+                view.onFail(message);
             }
         });
-
-
-    }
-
-    @Override
-    public void showTheData() {
-
-      weatherModel.showData(new WeatherModel.onDataListener() {
-          @Override
-          public void onSuccess(String success) {
-
-          }
-
-          @Override
-          public void showSuccess(String display) {
-              view.onShowData(display);
-
-          }
-      });
-
     }
 }

@@ -1,7 +1,5 @@
 package com.example.firstproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,16 +7,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.firstproject.MVP.WeatherInterface;
 import com.example.firstproject.MVP.WeatherPresenter;
+import com.example.firstproject.RetrofitHelper.MultipleResource;
 
 public class WeatherActivity extends AppCompatActivity implements WeatherInterface.View {
 // define
     Button  simpleButton;
-    EditText fullname;
-    EditText email;
-    EditText phone;
-    EditText address;
+    EditText latitude;
+    EditText longitude;
+    EditText product;
+    EditText output;
     WeatherInterface.Presenter presenter;
     //global varibale
     String namenew;
@@ -38,10 +39,10 @@ public class WeatherActivity extends AppCompatActivity implements WeatherInterfa
         //mapping
         setContentView(R.layout.activity_weather);
        simpleButton=findViewById(R.id.simpleButton);
-       fullname=findViewById(R.id.full_name);
-       email=findViewById(R.id.email);
-       phone=findViewById(R.id.phone);
-       address=findViewById(R.id.address);
+       latitude=findViewById(R.id.latitude);
+       longitude=findViewById(R.id.longitude);
+       product=findViewById(R.id.product);
+       output=findViewById(R.id.output);
 
       presenter= new WeatherPresenter(this);
 
@@ -55,29 +56,29 @@ public class WeatherActivity extends AppCompatActivity implements WeatherInterfa
            //button onclick
            public void onClick(View v) {
 
-               if (fullname.getText().toString().length() == 0) {
+               if (latitude.getText().toString().length() == 0) {
                    Toast.makeText(getApplicationContext(), "Please input number", Toast.LENGTH_LONG).show();
-                   fullname.setError("Please enter name");
+                   latitude.setError("Please enter name");
                }
-               else if (email.getText().toString().length()==0){
+               else if (longitude.getText().toString().length()==0){
                    Toast.makeText(getApplicationContext(), "Enter your Email",Toast.LENGTH_LONG).show();
-                   email.setError("Please enter email");
+                   longitude.setError("Please enter email");
                }
-               else if (phone.getText().toString().length()==0){
+               else if (product.getText().toString().length()==0){
                    Toast.makeText(getApplicationContext(), "Enter your number",Toast.LENGTH_LONG).show();
-                   phone.setError("Please enter phone no");
+                   product.setError("Please enter phone no");
 
                }
-               else if (address.getText().toString().length()==0){
+               else if (output.getText().toString().length()==0){
                    Toast.makeText(getApplicationContext(),"Enter your address", Toast.LENGTH_LONG).show();
-                   address.setError("Please enter address");
+                   output.setError("Please enter address");
 
                }
 
                else {
                    //request sent
                    //presenter.requestDataFromServer();
-                   presenter.showTheData();
+                   presenter.showTheData(Float.parseFloat(latitude.getText().toString()), Float.parseFloat(longitude.getText().toString()),product.getText().toString(),output.getText().toString());
                    btn_nextPage();
 
                }
@@ -91,40 +92,28 @@ public class WeatherActivity extends AppCompatActivity implements WeatherInterfa
     }
 // function
     public void btn_nextPage() {
+
+
+
+
+    }
+
+
+    @Override
+    public void onSuccess(MultipleResource multipleResource) {
         Intent intent = new Intent(WeatherActivity.this,WeatherDetailsActivity.class);
-        intent.putExtra("full_name",fullname.getText().toString());
-        intent.putExtra("email",email.getText().toString());
-        intent.putExtra("phone",phone.getText().toString());
-        intent.putExtra("address",address.getText().toString());
-        intent.putExtra("display",namenew);
+        intent.putExtra("latitude",latitude.getText().toString());
+        intent.putExtra("longitude",longitude.getText().toString());
+        intent.putExtra("product",product.getText().toString());
+        intent.putExtra("output",output.getText().toString());
+       // intent.putExtra("display",multipleResource.getProduct());
 
-       startActivity(intent);
-
-
-
-
-
-
-
-    }
-
-
-    @Override
-    public void setWeather() {
+        startActivity(intent);
 
     }
 
     @Override
-    public void onSuccessData(String onsuccess) {
-        Toast.makeText(getApplicationContext(),onsuccess,Toast.LENGTH_LONG).show();
+    public void onFail(String errormessage) {
+        Toast.makeText(getApplicationContext(),errormessage,Toast.LENGTH_LONG).show();
     }
-
-    @Override
-    public void onShowData(String display) {
-        Toast.makeText(getApplicationContext(),display,Toast.LENGTH_LONG).show();
-        namenew = display;
-    }
-
-
-
 }

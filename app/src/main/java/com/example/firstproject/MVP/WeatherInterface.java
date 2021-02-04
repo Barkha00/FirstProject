@@ -1,24 +1,22 @@
 package com.example.firstproject.MVP;
 
+import com.example.firstproject.RetrofitHelper.MultipleResource;
+
 public interface WeatherInterface {
 
     //creating Presenter interface to connect the method from view and to send to presenter.
     interface Presenter{
 
 
-        void requestDataFromServer();
 
-        void showTheData();
+        void showTheData(float latitude,float longitude,String product, String output);
 
     }
     //
     interface View{
-        void setWeather();
+       void onSuccess(MultipleResource multipleResource);
 
-        void onSuccessData(String onsuccess);
-
-
-        void onShowData(String display);
+       void onFail(String errormessage);
     }
 
 

@@ -48,16 +48,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="latitude"
             android:textColor="#483D8B"
             android:layout_marginLeft="10dp"
             android:textSize="15sp"
             />
     <EditText
-        android:id="@+id/full_name"
+        android:id="@+id/latitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         android:hint="Enter Your Full Name"
         android:layout_marginLeft="20dp"
 
@@ -73,19 +73,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="Longitude"
         android:textColor="#483D8B"
         android:layout_marginLeft="10dp"
         android:textSize="15sp"
         />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/longitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="27dp"
             android:hint="Enter Your Email"
-            android:inputType="text"
+            android:inputType="numberDecimal"
 
 
             />
@@ -101,16 +101,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone"
+            android:text="Product"
             android:textColor="#483D8B"
             android:layout_marginLeft="10dp"
             android:textSize="15sp"
             />
         <EditText
-            android:id="@+id/phone"
+            android:id="@+id/product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="text"
             android:hint="Enter Your Phone no"
             android:layout_marginLeft="20dp"
 
@@ -123,13 +123,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
+            android:text="Output"
             android:textColor="#483D8B"
             android:layout_marginLeft="10dp"
             android:textSize="15sp"
             />
         <EditText
-            android:id="@+id/address"
+            android:id="@+id/output"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
